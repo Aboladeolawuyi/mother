@@ -32,7 +32,7 @@ export default function LandingPage() {
       {/* Main Landing Section with video */}
       <section id="landing-section" className="relative h-screen">
         <video
-          className="absolute inset-0 w-full h-full object-cover z-0"
+          className="absolute inset-0 w-full h-full object-cover z-10"
           autoPlay
           loop
           muted={muted}
@@ -58,7 +58,7 @@ export default function LandingPage() {
         id="the-film-section"
         videoSrc="/assets/video/moc-the-film.mp4"
         overlay
-        className="min-w-full relative z-0"
+        className="min-w-full relative z-10"
       >
         <div className="min-h-[130vh] relative z-10">
           <TheFilmBox />
