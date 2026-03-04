@@ -38,7 +38,7 @@ export default function LandingPage() {
           muted={muted}
           playsInline
         >
-          <source src="/assets/video/moc-video02.mp4" type="video/mp4" />
+          <source src="/assets/video/jesus.mp4" type="video/mp4" />
         </video>
         <div className="absolute inset-0 bg-black/50 z-10" />
         <LandingSection onWatchTrailer={scrollToTrailer} />
@@ -56,7 +56,7 @@ export default function LandingPage() {
       {/* The Film Section */}
       <SectionWithBackground
         id="the-film-section"
-        videoSrc="/assets/video/moc-the-film.mp4"
+        videoSrc="/assets/video/jesus.mp4"
         overlay
         className="min-w-full relative z-10"
       >
