@@ -21,7 +21,7 @@ const JourneyModal = ({ onClose }: { onClose: () => void }) => (
         className="w-full h-full object-cover"
       >
         <source
-          src="/assets/video/moc-loader-background.mp4"
+          src="/assets/moc-loader-background.mp4"
           type="video/mp4"
         />
       </video>

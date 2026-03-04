@@ -102,7 +102,7 @@ export default function Loader({ onFinish }: LoaderProps) {
       {/* Background Video */}
       <video
         className="absolute inset-0 w-full h-full object-cover"
-        src="/assets/video/moc-loader-background.mp4"
+        src="/assets/moc-loader-background.mp4"
         autoPlay
         loop
         muted
