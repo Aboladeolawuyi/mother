@@ -17,14 +17,13 @@ const GALLERY_CATEGORIES = {
   premierePictures: {
     title: "Premiere Pictures",
     images: [
-
+      "/assets/images/premierpictures/sap_events_mothersofchibokpremiere_34.jpeg",
       "/assets/images/premierpictures/sap_events_mothersofchibokpremiere_21.jpeg",
       "/assets/images/premierpictures/sap_events_mothersofchibokpremiere_22.jpeg",
       "/assets/images/premierpictures/sap_events_mothersofchibokpremiere_23.jpeg",
       "/assets/images/premierpictures/sap_events_mothersofchibokpremiere_24.jpeg",
       "/assets/images/premierpictures/sap_events_mothersofchibokpremiere_27.jpg",
       "/assets/images/premierpictures/sap_events_mothersofchibokpremiere_33.jpeg",
-      "/assets/images/premierpictures/sap_events_mothersofchibokpremiere_34.jpeg",
       "/assets/images/premierpictures/sap_events_mothersofchibokpremiere_35.jpg",
       "/assets/images/premierpictures/sap_events_mothersofchibokpremiere_36.jpg",
       "/assets/images/premierpictures/sap_events_mothersofchibokpremiere_45.jpeg",
@@ -53,7 +52,7 @@ const GALLERY_CATEGORIES = {
       "/assets/images/premierpictures/sap_events_mothersofchibokpremiere_240.jpg",
       "/assets/images/premierpictures/sap_events_mothersofchibokpremiere_248.jpg",
       "/assets/images/premierpictures/sap_events_mothersofchibokpremiere_249.jpg",
-      "/assets/images/premierpictures/1d7925e0-9f21-4648-aa22-f1628cc9132e.jpg",
+      // "/assets/images/premierpictures/1d7925e0-9f21-4648-aa22-f1628cc9132e.jpg",
       // "/assets/images/premierpictures/8ad4ad8f-4a33-4f30-ab4f-b8232a002012.jpg",
       // "/assets/images/premierpictures/9d4a1876.jpg",
       // "/assets/images/premierpictures/9d4a2425.jpeg",

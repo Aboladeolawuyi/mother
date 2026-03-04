@@ -38,6 +38,7 @@ export default function LandingPage() {
           autoPlay
           loop
           muted={muted}
+          playsInline
         >
           <source src="/assets/video/moc-video02.mp4" type="video/mp4" />
         </video>
@@ -46,9 +47,9 @@ export default function LandingPage() {
       </section>
 
       {/* Trailer Section */}
-      <section 
+      <section
         ref={trailerRef}
-        id="trailer-section" 
+        id="trailer-section"
         className="bg-neutral-950 text-white py-12"
       >
         <MovieBento
@@ -71,15 +72,15 @@ export default function LandingPage() {
       </SectionWithBackground>
 
       {/* Posters Section - After The Film Section */}
-      <section 
+      <section
         className="bg-neutral-950 text-white py-12"
         id="the-mothers"
-        >
+      >
         <header className="border-b p-10 lg:p-16 flex justify-between items-center">
-        <div className="lg:text-[70px] text-[40px] tracking-tight4 leading-0 font-guthenBloots text-gray-200">
-          The Mothers
-        </div>
-      </header>
+          <div className="lg:text-[70px] text-[40px] tracking-tight4 leading-0 font-guthenBloots text-gray-200">
+            The Mothers
+          </div>
+        </header>
         <PostersSection />
       </section>
 
@@ -98,11 +99,11 @@ export default function LandingPage() {
 
       {/* Cinema Listings Section */}
       <section id="cinema-listings">
-          <CinemaListings />
+        <CinemaListings />
       </section>
       {/* Documentary Stills Section */}
       <DocumentaryStills />
-      
+
       <section
         className="h-screen items-start bg-cover bg-center"
         style={{ backgroundImage: "url('/assets/images/moc-web-image-2.jpg')" }}
@@ -135,7 +136,7 @@ export default function LandingPage() {
         <div className="min-w-full relative z-10">
           <TheHeadline />
           <BeneContent />
-          
+
           <GoalsTimeline />
         </div>
       </section>
@@ -152,7 +153,7 @@ export default function LandingPage() {
         </div>
       </section>
 
-        <section
+      <section
         id="the-impact"
         className="min-h-screen flex items-center justify-center bg-fixed bg-cover bg-center"
         style={{ backgroundImage: "url('/assets/images/the-impact-bg.jpg')" }}
