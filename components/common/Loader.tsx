@@ -9,6 +9,9 @@ interface LoaderProps {
   onFinish: () => void;
 }
 
+// Cloudinary Video URL
+const LOADER_VIDEO_URL = "https://res.cloudinary.com/davm498td/video/upload/v1772587361/moc-loader-background_yvvokx.mp4";
+
 export default function Loader({ onFinish }: LoaderProps) {
   const lineRef = useRef<HTMLDivElement | null>(null);
   const paragraphRefs = useRef<(HTMLParagraphElement | null)[]>([]);
@@ -16,7 +19,7 @@ export default function Loader({ onFinish }: LoaderProps) {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const logoRef = useRef<HTMLImageElement | null>(null);
   const loadingTextRef = useRef<HTMLSpanElement | null>(null);
-  const underlineRef = useRef<HTMLDivElement | null>(null);
+  const videoRef = useRef<HTMLVideoElement | null>(null);
 
   const paragraphs = [
     "In a small village in Northeast Nigeria, a community of mothers forge a path forward after the tragic events of April 2014 when their daughters were kidnapped by Boko Haram. The film follows four mothers over a farming season as they fight for their children and their futures.",
@@ -101,15 +104,17 @@ export default function Loader({ onFinish }: LoaderProps) {
     >
       {/* Background Video */}
       <video
+        ref={videoRef}
         className="absolute inset-0 w-full h-full object-cover"
-        src="/assets/moc-loader-background.mp4"
+        src={LOADER_VIDEO_URL}
         autoPlay
         loop
         muted
+        playsInline
+        preload="auto"
       />
 
-      {/*        playsInline
- Dark Overlay */}
+      {/* Dark Overlay */}
       <div className="absolute inset-0 bg-black/50" />
 
       {/* Line + Loading */}
