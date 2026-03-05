@@ -169,61 +169,61 @@ export default function PhotoGallery() {
 
       {/* Dynamic Gallery Grid */}
       <div
-        ref={containerRef}
-        className="relative z-10 container mx-auto px-4 md:px-12 pl-20 md:pl-20 lg:px-4"
-      >
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={activeCategory}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.5 }}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-          >
-            {currentImages.map((src, index) => (
-              <motion.div
-                key={`${activeCategory}-${index}`}
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className={`relative group cursor-pointer ${index === 0 ? "md:col-span-2 lg:col-span-2" : ""
-                  }`}
-                onClick={() => setSelectedImage(src)}
-              >
-                <div className={`relative overflow-hidden rounded-2xl ${index === 0 ? "aspect-[21/9]" : "aspect-[4/3]"
-                  }`}>
-                  <Image
-                    src={src}
-                    alt={`${GALLERY_CATEGORIES[activeCategory].title} ${index + 1}`}
-                    fill
-                    className="object-cover transition-transform duration-700 group-hover:scale-105"
-                    priority={index < 2}
-                  />
-                  {/* Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-
-                  {/* Corner accents */}
-                  <div className="absolute top-4 left-4 w-8 h-8 border-t-2 border-l-2 border-[#B89C58] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                  <div className="absolute top-4 right-4 w-8 h-8 border-t-2 border-r-2 border-[#B89C58] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                  <div className="absolute bottom-4 left-4 w-8 h-8 border-b-2 border-l-2 border-[#B89C58] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                  <div className="absolute bottom-4 right-4 w-8 h-8 border-b-2 border-r-2 border-[#B89C58] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                </div>
-                {/* Frame effect */}
-                <div className="absolute -inset-3 border border-[#B89C58]/30 rounded-2xl -z-10 group-hover:border-[#B89C58]/80 transition-colors duration-500" />
-              </motion.div>
-            ))}
-          </motion.div>
-        </AnimatePresence>
-
-        {/* Decorative line */}
+  ref={containerRef}
+  className="relative z-10 container mx-auto px-4 md:px-12 pl-20 md:pl-20 lg:px-4"
+>
+  <AnimatePresence mode="wait">
+    <motion.div
+      key={activeCategory}
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -20 }}
+      transition={{ duration: 0.5 }}
+      className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+    >
+      {currentImages.map((src, index) => (
         <motion.div
-          initial={{ scaleX: 0 }}
-          animate={isInView ? { scaleX: 1 } : {}}
-          transition={{ duration: 1, delay: 0.9 }}
-          className="mt-16 w-full h-px bg-gradient-to-r from-transparent via-[#B89C58]/50 to-transparent"
-        />
-      </div>
+          key={`${activeCategory}-${index}`}
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5, delay: index * 0.1 }}
+          className="relative group cursor-pointer"
+          onClick={() => setSelectedImage(src)}
+        >
+          <div className="relative overflow-hidden rounded-2xl aspect-[4/4]">
+            <Image
+              src={src}
+              alt={`${GALLERY_CATEGORIES[activeCategory].title} ${index + 1}`}
+              fill
+              className="object-cover transition-transform duration-700 group-hover:scale-105"
+              priority={index < 1}
+            />
+
+            {/* Overlay */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+            {/* Corner accents */}
+            <div className="absolute top-4 left-4 w-8 h-8 border-t-2 border-l-2 border-[#B89C58] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            <div className="absolute top-4 right-4 w-8 h-8 border-t-2 border-r-2 border-[#B89C58] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            <div className="absolute bottom-4 left-4 w-8 h-8 border-b-2 border-l-2 border-[#B89C58] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            <div className="absolute bottom-4 right-4 w-8 h-8 border-b-2 border-r-2 border-[#B89C58] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+          </div>
+
+          {/* Frame effect */}
+          <div className="absolute -inset-3 border border-[#B89C58]/30 rounded-2xl -z-10 group-hover:border-[#B89C58]/80 transition-colors duration-500" />
+        </motion.div>
+      ))}
+    </motion.div>
+  </AnimatePresence>
+
+  {/* Decorative line */}
+  <motion.div
+    initial={{ scaleX: 0 }}
+    animate={isInView ? { scaleX: 1 } : {}}
+    transition={{ duration: 1, delay: 0.9 }}
+    className="mt-16 w-full h-px bg-gradient-to-r from-transparent via-[#B89C58]/50 to-transparent"
+  />
+</div>
 
       {/* Lightbox Modal */}
       <AnimatePresence>
