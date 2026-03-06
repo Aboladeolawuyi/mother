@@ -13,8 +13,8 @@ interface PressLink {
 const pressLinks: PressLink[] = [
   {
     id: 1,
-    url: "https://leadership.ng/joel-kachi-bensons-mothers-of-chibok-set-for-cinema-release-feb-27/",
-    label: "Leadership Newspaper",
+    url: "https://thesun.ng/mothers-of-chibok-tells-the-story-the-world-forgot/",
+    label: "The Sun",
     category: "article",
   },
   {
@@ -155,11 +155,17 @@ const pressLinks: PressLink[] = [
     label: "Tekedia",
     category: "article",
   },
+  {
+    id: 25,
+    url: "https://leadership.ng/joel-kachi-bensons-mothers-of-chibok-set-for-cinema-release-feb-27/",
+    label: "Leadership Newspaper",
+    category: "article",
+  },
 ];
 
 export default function PressMentions() {
   const [showAll, setShowAll] = useState(false);
-  const initialDisplayCount = 8;
+  const initialDisplayCount = 9;
   const displayedLinks = showAll ? pressLinks : pressLinks.slice(0, initialDisplayCount);
   const remainingCount = pressLinks.length - initialDisplayCount;
 

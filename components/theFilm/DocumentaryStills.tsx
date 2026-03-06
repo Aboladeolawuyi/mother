@@ -224,8 +224,7 @@ export default function PhotoGallery() {
     className="mt-16 w-full h-px bg-gradient-to-r from-transparent via-[#B89C58]/50 to-transparent"
   />
 </div>
-
-      {/* Lightbox Modal */}
+    {/* Lightbox Modal */}
       <AnimatePresence>
         {selectedImage && (
           <motion.div
