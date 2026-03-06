@@ -161,6 +161,18 @@ const pressLinks: PressLink[] = [
     label: "Leadership Newspaper",
     category: "article",
   },
+   {
+    id: 26,
+    url: "https://www.modernghana.com/news/1476477/nigerias-mothers-of-chibok-go-from-farm-to-fact.html",
+    label: "Modern Ghana",
+    category: "article",
+  },
+   {
+    id: 27,
+    url: "https://www.france24.com/fr/info-en-continu/20260306-du-champ-%C3%A0-l-usine-au-nigeria-les-m%C3%A8res-de-chibok-leurs-cacahu%C3%A8tes-et-l-%C3%A9ducation-des-enfants",
+    label: "France 24",
+    category: "article",
+  },
 ];
 
 export default function PressMentions() {
