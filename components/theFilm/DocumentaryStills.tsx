@@ -95,8 +95,7 @@ const GALLERY_CATEGORIES = {
   },
   productPictures: {
     title: "Product Pictures",
-    images: [
-      "/assets/images/productpictures/9d4a1920.jpg",
+    images: ["/assets/images/productpictures/9d4a1920.jpg",
       "/assets/images/productpictures/9d4a1945.jpg",
       "/assets/images/productpictures/9d4a1949.jpg",
       "/assets/images/productpictures/9d4a1956.jpg",
@@ -106,8 +105,30 @@ const GALLERY_CATEGORIES = {
       "/assets/images/productpictures/9d4a1980.jpg",
       "/assets/images/productpictures/9d4a1994.jpg",
       "/assets/images/productpictures/9d4a1996.jpg",
+      "/assets/images/productpictures/9d4a3237.jpg",
+      "/assets/images/productpictures/9d4a3244.jpg",
+      "/assets/images/productpictures/9d4a3249.jpg",
+      "/assets/images/productpictures/9d4a3259.jpg",
+      "/assets/images/productpictures/9d4a3291.jpg",
+      "/assets/images/productpictures/9d4a3297.jpg",
       "/assets/images/productpictures/sap_events_mothersofchibokpremiere_108.jpg"
     ],
+  },
+  productLaunch: {
+    title: "Product Launch",
+    images: ["/assets/images/productlaunch/9d4a3333.jpg",
+      "/assets/images/productlaunch/9d4a3346.jpg",
+      "/assets/images/productlaunch/9d4a3366.jpg",
+      "/assets/images/productlaunch/9d4a3419.jpg",
+      "/assets/images/productlaunch/9d4a3511.jpg",
+      "/assets/images/productlaunch/9d4a3548.jpg",
+      "/assets/images/productlaunch/9d4a3631.jpg",
+      "/assets/images/productlaunch/9d4a3698.jpg",
+      "/assets/images/productlaunch/9d4a3720.jpg",
+      "/assets/images/productlaunch/9d4a3765.jpg",
+      "/assets/images/productlaunch/9d4a3782.jpg",
+      "/assets/images/productlaunch/9d4a3792.jpg",
+      "/assets/images/productlaunch/9d4a3819.jpg",],
   },
 };
 
@@ -169,62 +190,62 @@ export default function PhotoGallery() {
 
       {/* Dynamic Gallery Grid */}
       <div
-  ref={containerRef}
-  className="relative z-10 container mx-auto px-4 md:px-12 pl-20 md:pl-20 lg:px-4"
->
-  <AnimatePresence mode="wait">
-    <motion.div
-      key={activeCategory}
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, y: -20 }}
-      transition={{ duration: 0.5 }}
-      className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-    >
-      {currentImages.map((src, index) => (
+        ref={containerRef}
+        className="relative z-10 container mx-auto px-4 md:px-12 pl-20 md:pl-20 lg:px-4"
+      >
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={activeCategory}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.5 }}
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          >
+            {currentImages.map((src, index) => (
+              <motion.div
+                key={`${activeCategory}-${index}`}
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="relative group cursor-pointer"
+                onClick={() => setSelectedImage(src)}
+              >
+                <div className="relative overflow-hidden rounded-2xl aspect-[4/4]">
+                  <Image
+                    src={src}
+                    alt={`${GALLERY_CATEGORIES[activeCategory].title} ${index + 1}`}
+                    fill
+                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                    priority={index < 1}
+                  />
+
+                  {/* Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+                  {/* Corner accents */}
+                  <div className="absolute top-4 left-4 w-8 h-8 border-t-2 border-l-2 border-[#B89C58] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  <div className="absolute top-4 right-4 w-8 h-8 border-t-2 border-r-2 border-[#B89C58] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  <div className="absolute bottom-4 left-4 w-8 h-8 border-b-2 border-l-2 border-[#B89C58] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  <div className="absolute bottom-4 right-4 w-8 h-8 border-b-2 border-r-2 border-[#B89C58] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                </div>
+
+                {/* Frame effect */}
+                <div className="absolute -inset-3 border border-[#B89C58]/30 rounded-2xl -z-10 group-hover:border-[#B89C58]/80 transition-colors duration-500" />
+              </motion.div>
+            ))}
+          </motion.div>
+        </AnimatePresence>
+
+        {/* Decorative line */}
         <motion.div
-          key={`${activeCategory}-${index}`}
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.5, delay: index * 0.1 }}
-          className="relative group cursor-pointer"
-          onClick={() => setSelectedImage(src)}
-        >
-          <div className="relative overflow-hidden rounded-2xl aspect-[4/4]">
-            <Image
-              src={src}
-              alt={`${GALLERY_CATEGORIES[activeCategory].title} ${index + 1}`}
-              fill
-              className="object-cover transition-transform duration-700 group-hover:scale-105"
-              priority={index < 1}
-            />
-
-            {/* Overlay */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-
-            {/* Corner accents */}
-            <div className="absolute top-4 left-4 w-8 h-8 border-t-2 border-l-2 border-[#B89C58] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-            <div className="absolute top-4 right-4 w-8 h-8 border-t-2 border-r-2 border-[#B89C58] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-            <div className="absolute bottom-4 left-4 w-8 h-8 border-b-2 border-l-2 border-[#B89C58] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-            <div className="absolute bottom-4 right-4 w-8 h-8 border-b-2 border-r-2 border-[#B89C58] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-          </div>
-
-          {/* Frame effect */}
-          <div className="absolute -inset-3 border border-[#B89C58]/30 rounded-2xl -z-10 group-hover:border-[#B89C58]/80 transition-colors duration-500" />
-        </motion.div>
-      ))}
-    </motion.div>
-  </AnimatePresence>
-
-  {/* Decorative line */}
-  <motion.div
-    initial={{ scaleX: 0 }}
-    animate={isInView ? { scaleX: 1 } : {}}
-    transition={{ duration: 1, delay: 0.9 }}
-    className="mt-16 w-full h-px bg-gradient-to-r from-transparent via-[#B89C58]/50 to-transparent"
-  />
-</div>
-    {/* Lightbox Modal */}
+          initial={{ scaleX: 0 }}
+          animate={isInView ? { scaleX: 1 } : {}}
+          transition={{ duration: 1, delay: 0.9 }}
+          className="mt-16 w-full h-px bg-gradient-to-r from-transparent via-[#B89C58]/50 to-transparent"
+        />
+      </div>
+      {/* Lightbox Modal */}
       <AnimatePresence>
         {selectedImage && (
           <motion.div
